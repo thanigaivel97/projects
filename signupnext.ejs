@@ -1,0 +1,139 @@
+<%- include('../views/includes/head.ejs') %>
+    <style>
+        span {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+
+    </head>
+
+    <%- include('../views/includes/nav.ejs') %>
+        <%- include('../views/includes/modal.ejs') %>
+
+            <div class="row">
+                <div class="col s4"></div>
+
+                <div class="col s4 z-depth-5 " style="margin-top: 20px;border-radius: 20px;">
+
+                    <form action="/user" method="POST">
+
+                        <h5 style="text-align: center;font-weight: bold;">SIGN <span style="color: orange;">up</span></h5>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" name="country" class="validate">
+                                <label for="first_name">Country</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text" name="city" class="validate">
+                                <label for="last_name">City</label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="dob" class="validate">
+                            <label for="last_name">Date of birth</label>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="text" name="dispslayname" class="validate">
+                            <label for="last_name">Display Name</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <select name="hobies" multiple> 
+                                <option value="" disabled selected>Choose your hobbies</option>
+                                <option value="dancing">Dancing</option>
+                                <option value="singing">Singing</option>
+                                <option value="reading">Reading</option>
+                                <option value="playing">playing</option>
+                                <option value="drawing">drawing</option>
+                                <option value="travelling">Traveling</option>
+                                <option value="fishing">Fishing</option>
+                                <option value="hunting">Hunting</option>
+                                <option value="painting">Painting</option>
+                                <option value="gradening">Gradening</option>
+                                
+                            </select>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" name="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+
+
+                        <div class="input-field ">
+                            <input id="password" name="password" type="password" class="validate ps">
+                            <label for="password">Password</label>
+                        </div>
+
+                        <div class="input-field ">
+                            <input id="conformpassword" type="password" class="validate cps">
+                            <label for="password">Conform Password</label>
+                        </div>
+
+                        <div style="text-align: center;">
+
+                            <button class="btn waves-effect waves-light" onclick="wth()" type="submit" name="action" style="text-align: center;">Complete Your SIgn up<br>
+                            </button>
+                            <hr>
+
+                            <p>By clicking you agree to terms and conditions</p>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col s6">
+
+                </div>
+
+            </div>
+
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 style="font-weight: bolder;color: black;">Welcome to the best free dating site on the web</h5>
+                            <p class="text-lighten-4" style="color: black;"> 100% Free Online Dating for Tamilnadu Singles. Our free personal ads are full of single women and men in Tamilnadu looking for serious relationships, a little online flirtation, or new friends to go out with. </p>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                            <h5 style="color: black;">Links</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="#!">Terms and Conditions</a></li>
+                                <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <span style="text-align: center;margin-left: 30%;"> Copyright © 2006-2020 match live. All rights reserved</span>
+
+                    </div>
+                </div>
+            </footer>
+            <script type="text/javascript">
+                function wth() {
+                    var password = document.getElementById('password').value;
+                    var conformpassword = document.getElementById('conformpassword').value;
+                    console.log(password + ' ' + conformpassword);
+                    if (password != conformpassword) {
+                        alert("password mismatch");
+                    } else {
+                        alert("passmatched");
+                    }
+
+                }
+
+                $(document).ready(function() {
+                    $('.datepicker').datepicker();
+                    $('select').formSelect();
+                    $('.modal').modal();
+                });
+            </script>
+            </body>
+
+            </html>
